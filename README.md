@@ -36,6 +36,7 @@ The following optional features can be enabled in `Cargo.toml`:
 * `schemars`: Implements the `schemars::JsonSchema` trait.
 * `serde`: Implements the `serde::Serialize` and `serde::Deserialize` traits.
 * `speedy`: Implements `speedy`'s `Readable` and `Writable` traits.
+* `bevy_reflect`: Derives `Reflect`. 
 
 ## License
 

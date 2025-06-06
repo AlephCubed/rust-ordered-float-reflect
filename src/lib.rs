@@ -22,7 +22,6 @@ use core::ops::{
     SubAssign,
 };
 use core::str::FromStr;
-
 pub use num_traits::float::FloatCore;
 use num_traits::{
     AsPrimitive, Bounded, FloatConst, FromPrimitive, Num, NumCast, One, Signed, ToPrimitive, Zero,
@@ -85,6 +84,7 @@ pub use impl_rand::{UniformNotNan, UniformOrdered};
     not(feature = "bytemuck"),
     doc = "[`bytemuck`]: https://docs.rs/bytemuck/1/"
 )]
+#[cfg_attr(feature = "bevy_reflect", derive(bevy_reflect::Reflect))]
 #[derive(Default, Clone, Copy)]
 #[repr(transparent)]
 pub struct OrderedFloat<T>(pub T);
@@ -1244,6 +1244,7 @@ impl<T: FloatCore + Num> Num for OrderedFloat<T> {
     doc = "[`bytemuck`]: https://docs.rs/bytemuck/1/"
 )]
 #[derive(PartialOrd, PartialEq, Default, Clone, Copy)]
+#[cfg_attr(feature = "bevy_reflect", derive(bevy_reflect::Reflect))]
 #[repr(transparent)]
 pub struct NotNan<T>(T);
 
